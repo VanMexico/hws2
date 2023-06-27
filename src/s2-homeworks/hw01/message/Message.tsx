@@ -21,6 +21,7 @@ const Message = (props: PropsType) => {
           //
         />
         <div className={s.text}>
+          <div className="triangle"></div>
           <div id={'hw1-name-' + id} className={s.name}>
             {/*создаёт студент*/}
             {user.name}

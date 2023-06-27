@@ -1,16 +1,23 @@
 .message {
-
+  padding: 0 70px;
 }
 
 .imageAndText {
-
+  display: flex;
+  align-items: end;
 }
 
 .imageAndText img {
-
+  width: 40px;
+  height: 40px;
 }
 
 .text {
+  margin-left: 15px;
+  background-color: #F5F7FB;
+  padding: 8px 27px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px 0 #1D212608;
 
 }
 
@@ -19,13 +26,21 @@
 }
 
 .name {
-
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .messageText {
-
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 4px;
 }
 
 .time {
-
+  font-size: 10px;
+  font-weight: 600;
+  display: inline-block;
+  width: 40px;
+  text-align: center;
+  margin: 5px auto 0;
 }
