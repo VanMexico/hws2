@@ -3,6 +3,7 @@ import { Greeting } from './Greeting'
 import { UserType } from './HW3'
 import { Simulate } from 'react-dom/test-utils'
 import error = Simulate.error
+import { log } from 'util'
 
 type GreetingContainerPropsType = {
   users: UserType[]
@@ -26,8 +27,7 @@ export const pureAddUser = (
 }
 
 export const pureOnBlur = (name: string, setError: (e: string) => void) => {
-  if (!name.trim()) setError('Ошибка! Введите имя!')
-  if (name) setError('')
+  name.trim() ? setError('') : setError('Ошибка! Введите имя!')
 }
 
 export const pureOnEnter = (
@@ -47,8 +47,10 @@ const GreetingContainer: FC<GreetingContainerPropsType> = ({
   const [error, setError] = useState<string>('') // need to fix any
 
   const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.currentTarget.value.trim()
     setName(e.currentTarget.value)
-    error && setError('Ошибка! Введите имя!')
+
+    if (value) error && setError('')
   }
   const addUser = () => {
     pureAddUser(name, setError, setName, addUserCallback)
